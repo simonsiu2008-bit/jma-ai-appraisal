@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff2f0">
+    <meta
+      name="description"
+      content="JMA AI 寶石鑑賞挑戰：隨機完成五道題，取得專屬 AI 導師分析報告。"
+    >
+    <title>JMA 國際珠寶｜AI 寶石鑑賞挑戰</title>
+    <link rel="icon" href="assets/jma-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-root">
+      <div class="ambient-grid" aria-hidden="true"></div>
+
+      <section class="gate-screen" aria-labelledby="hero-title">
+        <header class="gate-topbar">
+          <a
+            class="brand"
+            href="https://www.jewelryshows.org/sc/visitor/home.php"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="前往 JMA 國際珠寶展網站"
+          >
+            <img class="brand-image" src="assets/jma-logo.png" alt="JMA JEWELRY SHOW">
+          </a>
+          <span class="entry-pass">鑑賞票 / ENTRY PASS</span>
+        </header>
+
+        <div class="hero-art">
+          <img src="assets/jma-hero.png" alt="珠寶展廳與藍寶石主視覺">
+          <span aria-hidden="true">✦</span>
+          <span aria-hidden="true">✧</span>
+          <b>01 / LOOK CLOSER</b>
+        </div>
+
+        <div class="gate-layout">
+          <div class="gate-intro">
+            <span class="kicker">✦ AI 鑑賞挑戰</span>
+            <h1 id="hero-title">看得見光，<em>也讀得懂切面。</em></h1>
+            <p>完成五道寶石鑑賞題，讓 AI 導師為你整理正確率、知識重點與禮物結論。</p>
+          </div>
+
+          <div class="gate-panel">
+            <p class="event-note">
+              在 JMA 國際珠寶設計比賽決賽展覽中，開啟你的 AI 寶石鑑賞遊戲。
+              <br>
+              <small>
+                Interesting AI Game at the JMA International Jewelry Design
+                Competition Finalists Exhibition!
+              </small>
+            </p>
+            <p class="event-followup">
+              完成挑戰後，請到登記處領取對應禮物，並參加
+              IJDC「最受公眾歡迎作品獎」投票。
+            </p>
+
+            <div class="qr-row">
+              <button
+                class="qr-thumb"
+                type="button"
+                data-open-qr
+                aria-label="放大官方公眾號二維碼"
+              >
+                <img src="assets/jm-qr.jpg" alt="掃碼關注官方公眾號">
+              </button>
+              <div>
+                <small class="label">GAME QR / SCAN TO PLAY</small>
+                <strong>掃描 QR Code<br>開始五題鑑賞</strong>
+                <span>每位玩家限玩一次</span>
+              </div>
+            </div>
+
+            <label class="consent">
+              <input id="consentCheck" type="checkbox">
+              <span class="fake-check" aria-hidden="true">✓</span>
+              <span>
+                我已閱讀並同意遊戲授權資訊，並願意關注
+                <b>JMA 國際珠寶節</b> 公眾號 <small>(hkjewelryshow)</small>
+              </span>
+            </label>
+
+            <button class="primary-button" id="startQuiz" type="button" disabled>
+              開啟鑑賞挑戰 <span aria-hidden="true">→</span>
+            </button>
+            <p class="completion-note" id="completionNote" hidden>
+              此裝置已完成挑戰，請到登記處領取對應禮物。
+            </p>
+            <p class="privacy">⌑ 你的選擇只會用於本次互動，不會公開顯示</p>
+          </div>
+        </div>
+
+        <div class="journey" aria-label="鑑賞流程">
+          <span>YOUR APPRAISAL JOURNEY</span>
+          <div>
+            <b>01</b> 五題鑑賞 <i></i>
+            <b>02</b> AI 反饋 <i></i>
+            <b>03</b> AI 分析報告
+          </div>
+        </div>
+
+        <footer>
+          <span>一場屬於你的寶石鑑賞</span>
+          <span>↓ 向下探索</span>
+        </footer>
+      </section>
+    </main>
+
+    <div class="modal-backdrop" id="qrModal" hidden>
+      <section
+        class="modal qr-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="qr-title"
+      >
+        <button class="modal-close" type="button" data-close aria-label="關閉二維碼">×</button>
+        <small>JMA OFFICIAL</small>
+        <h2 id="qr-title">關注官方公眾號</h2>
+        <p>獲取展會資訊、活動預告與更多珠寶靈感</p>
+        <img class="qr-large" src="assets/jm-qr.jpg" alt="JMA 官方公眾號二維碼">
+        <span>長按識別二維碼</span>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="quizModal" hidden>
+      <section
+        class="modal quiz-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="quiz-title"
+      >
+        <button class="modal-close" type="button" data-close aria-label="關閉鑑賞挑戰">×</button>
+        <div id="quizContent" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <noscript>
+      <p class="noscript">此挑戰需要 JavaScript 才能開始。</p>
+    </noscript>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
